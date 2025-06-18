@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --color-primary: #0d6efd;
+  --color-accent: #ffc107;
+
+  --color-background: #121212;
+  --color-surface-1: #1e1e1e;
+  --color-surface-2: #212529;
+
+  --font-color-base: #eaeaea;
+  --font-color-muted: #888;
+  --font-color-inverse: #ffffff;
+
+  --font-family-base: 'Poppins', sans-serif;
+  --transition-speed: 0.3s;
+}
+
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-background);
+  color: var(--font-color-base);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+section h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.navbar {
+  background-color: var(--color-surface-2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-primary) !important;
+}
+
+.navbar .nav-link {
+  color: var(--font-color-inverse) !important;
+  transition: color var(--transition-speed) ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--color-accent) !important;
+}
+
+
+.card {
+  background-color: var(--color-surface-1);
+  color: var(--font-color-base);
+  border: none;
+  border-radius: 12px;
+  transition: transform var(--transition-speed) ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.card-title {
+  color: var(--color-primary);
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.text-warning {
+  color: var(--color-accent) !important;
+}
+
+
+footer {
+  background-color: var(--color-surface-2);
+  color: var(--font-color-muted);
+  font-size: 0.9rem;
+  padding: 2rem 0;
+}
+
+footer a {
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--color-primary) !important;
+}

@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --color-primary: #0d6efd;
+  --color-accent: #ffc107;
+
+  --color-background: #121212;
+  --color-surface-1: #1e1e1e;
+  --color-surface-2: #212529;
+
+  --font-color-base: #eaeaea;
+  --font-color-muted: #888;
+  --font-color-inverse: #ffffff;
+
+  --font-family-base: 'Poppins', sans-serif;
+  --transition-speed: 0.3s;
+}
+
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-background);
+  color: var(--font-color-base);
+  line-height: 1.6;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+
+.navbar {
+  background-color: var(--color-surface-2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-primary) !important;
+}
+
+.navbar .nav-link {
+  color: var(--font-color-inverse) !important;
+  transition: color var(--transition-speed) ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--color-accent) !important;
+}
+
+
+form .form-control {
+  background-color: var(--color-surface-1);
+  color: #fff;
+  border: 1px solid #444;
+}
+
+form .form-control::placeholder {
+  color: #aaa;
+}
+
+form .form-control:focus {
+  border-color: var(--color-primary);
+  box-shadow: none;
+}
+
+form label {
+  color: var(--font-color-base);
+}
+
+
+.mapa-iframe {
+  width: 100%;
+  max-width: 700px;
+  height: 350px;
+  border: 0;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.mapa-iframe:hover {
+  transform: scale(1.01);
+}
+
+
+@media (max-width: 992px) {
+  .mapa-iframe {
+    height: 300px;
+  }
+}
+
+
+footer {
+  background-color: var(--color-surface-2);
+  color: var(--font-color-muted);
+  font-size: 0.9rem;
+  padding: 2rem 0;
+}
+
+footer a {
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--color-primary) !important;
+}
