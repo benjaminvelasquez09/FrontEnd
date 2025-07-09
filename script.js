@@ -23,6 +23,12 @@ $(document).ready(function () {
     return regex.test(email);
   }
 
+  // Función para validar que el teléfono contenga solo números
+  function validarTelefono(telefono) {
+    const regex = /^\d+$/; // Expresión regular para validar solo dígitos
+    return regex.test(telefono);
+  }
+
   function renderTabla() {
     $("#tablaDatos tbody").empty();
     datos.forEach((item, index) => {
@@ -33,6 +39,7 @@ $(document).ready(function () {
           <td>${item.email}</td>
           <td>${item.pais}</td>
           <td>${item.nombreOficial}</td>
+          <td>${item.comentarios || ''}</td>
           <td>
             <button class="btn btn-warning btn-sm editar" data-index="${index}">Editar</button>
             <button class="btn btn-danger btn-sm eliminar" data-index="${index}">Eliminar</button>
@@ -52,9 +59,10 @@ $(document).ready(function () {
     const email = $("#email").val();
     const pais = $("#pais").val();
     const nombreOficial = $("#nombreOficial").val();
+    const comentarios = $("#comentarios").val();
 
     if (!nombre || !telefono || !email || !pais) {
-      alert("Todos los campos son obligatorios.");
+      alert("Todos los campos obligatorios deben ser completados (Nombre, Teléfono, Correo electrónico, País).");
       return;
     }
 
@@ -63,7 +71,13 @@ $(document).ready(function () {
       return;
     }
 
-    const contacto = { nombre, telefono, email, pais, nombreOficial };
+    // Validación simplificada para que el teléfono solo contenga números
+    if (!validarTelefono(telefono)) {
+      alert("El campo Teléfono debe contener solo números.");
+      return;
+    }
+
+    const contacto = { nombre, telefono, email, pais, nombreOficial, comentarios };
 
     if (modoEditar) {
       datos[indiceEditar] = contacto;
@@ -96,6 +110,7 @@ $(document).ready(function () {
     $("#email").val(item.email);
     $("#pais").val(item.pais).change();
     $("#nombreOficial").val(item.nombreOficial);
+    $("#comentarios").val(item.comentarios || '');
     modoEditar = true;
     indiceEditar = index;
   });
